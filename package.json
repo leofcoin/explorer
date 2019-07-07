@@ -1,0 +1,23 @@
+{
+  "name": "@leofcoin/explorer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leofcoin/explorer.git"
+  },
+  "author": "Glenn Vandeuren <vandeurenglenn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leofcoin/explorer/issues"
+  },
+  "homepage": "https://github.com/leofcoin/explorer#readme",
+  "dependencies": {
+    "@leofcoin/disco-room": "^1.1.5",
+    "@leofcoin/webnode": "^1.0.1"
+  }
+}
