@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "c": "rollup -c",
+    "w": "rollup -c -w",
     "cp": "cp node_modules/@leofcoin/webnode/dist/webnode.js webnode.js && cp node_modules/custom-input/custom-input.js modules/custom-input.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

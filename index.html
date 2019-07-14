@@ -3,9 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="https://unpkg.com/@leofcoin/webnode@1.0.10/dist/webnode.js" charset="utf-8"></script>
-  </head>
-  <body>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./webnode.js" charset="utf-8"></script>
+  </head>  
+  <body>    
+    <style>
+      .alpha {
+        position: fixed;
+        bottom: 24px;
+        left: 24px;
+      }
+    </style>
+    <leofcoin-explorer></leofcoin-explorer>
+    <span class="alpha">alpha</span>    
+    <script type="text/javascript" type="module">
+      (async () => {
+        const promises = Promise.all([
+          import('./dist/leofcoin-explorer.js')
+        ])
+        await webnode();
+        
+        console.log(room.peers);
+      })()
+    </script>
   </body>
 </html>
