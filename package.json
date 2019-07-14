@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "cp": "cp node_modules/@leofcoin/webnode/dist/webnode.js webnode.js && cp node_modules/custom-input/custom-input.js modules/custom-input.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,7 @@
   },
   "homepage": "https://github.com/leofcoin/explorer#readme",
   "dependencies": {
-    "@leofcoin/disco-room": "^1.1.5",
-    "@leofcoin/webnode": "^1.0.1"
+    "@leofcoin/webnode": "^1.1.6",
+    "custom-input": "git+https://github.com/andrewvanardennen/custom-input.git"
   }
 }
