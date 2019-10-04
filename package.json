@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/leofcoin/explorer#readme",
   "dependencies": {
-    "@leofcoin/webnode": "^1.1.6",
     "custom-input": "git+https://github.com/andrewvanardennen/custom-input.git",
-    "lfc-api": "^1.0.11"
+    "lfc-api": "^1.0.12"
   }
 }
