@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./webnode.js" charset="utf-8"></script>
+    <script src="./dist/lfc-api.js" charset="utf-8"></script>
   </head>  
   <body>    
     <style>
@@ -21,9 +21,9 @@
         const promises = Promise.all([
           import('./dist/leofcoin-explorer.js')
         ])
-        await webnode();
+        window.api = await new LeofcoinApi();
         
-        console.log(room.peers);
+        console.log(api);
       })()
     </script>
   </body>
