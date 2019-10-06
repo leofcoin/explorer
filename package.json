@@ -6,7 +6,7 @@
   "scripts": {
     "c": "rollup -c",
     "w": "rollup -c -w",
-    "cp": "cp node_modules/@leofcoin/webnode/dist/webnode.js webnode.js && cp node_modules/custom-input/custom-input.js modules/custom-input.js",
+    "cp": "cp node_modules/lfc-api/browser.js dist/lfc-api.js && cp node_modules/custom-input/custom-input.js modules/custom-input.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,6 @@
   "homepage": "https://github.com/leofcoin/explorer#readme",
   "dependencies": {
     "custom-input": "git+https://github.com/andrewvanardennen/custom-input.git",
-    "lfc-api": "^1.0.12"
+    "lfc-api": "^1.0.17"
   }
 }
