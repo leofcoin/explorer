@@ -21,6 +21,6 @@
   "homepage": "https://github.com/leofcoin/explorer#readme",
   "dependencies": {
     "custom-input": "git+https://github.com/andrewvanardennen/custom-input.git",
-    "lfc-api": "^1.0.24"
+    "lfc-api": "^1.0.39"
   }
 }

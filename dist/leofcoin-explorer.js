@@ -88,6 +88,20 @@ customElements.define('custom-search', class CustomSearch extends HTMLElement {
   get input() {
     return this.shadowRoot.querySelector('custom-input');
   }
+  get form() {
+    return this.shadowRoot.querySelector('form');
+  }
+  
+  connectedCallback() {
+    this.input.addEventListener('keyup', e => {
+      console.log(e);
+      this.form.querySelector('[name="q"]').value = this.input.value;
+      if (e.keyCode === 13) this.form.querySelector('button').click();
+    });
+    this.form.addEventListener('submit', e => {
+      this.dispatchEvent(new CustomEvent('search', { detail: this.input.value }));
+    });
+  }
   constructor() {
     super();
     this.attachShadow({mode: 'open'});
@@ -197,9 +211,28 @@ var leofcoinExplorer = customElements.define('leofcoin-explorer', class Leofcoin
       </custom-container>
     </header>
     <custom-container>
-      <custom-search type="search" name="search-query" placeholder="search block" autocomplete></custom-search>    
+      <custom-search type="search" name="search-query" placeholder="search block" autocomplete></custom-search>
     </custom-container>
     `;
+    
+    this._onSearch = this._onSearch.bind(this);
+  }
+  
+  get search() {
+    return this.shadowRoot.querySelector('custom-search')
+  } 
+  
+  connectedCallback() {
+    this.search.addEventListener('search', this._onSearch);
+  }
+  
+  async _onSearch({detail}) {
+    try {
+      const result = await api.get(detail);
+      console.log(result);
+    } catch (e) {
+      console.error(e);
+    }
   }
 })
 

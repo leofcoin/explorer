@@ -18,8 +18,27 @@ export default customElements.define('leofcoin-explorer', class LeofcoinExplorer
       </custom-container>
     </header>
     <custom-container>
-      <custom-search type="search" name="search-query" placeholder="search block" autocomplete></custom-search>    
+      <custom-search type="search" name="search-query" placeholder="search block" autocomplete></custom-search>
     </custom-container>
     `
+    
+    this._onSearch = this._onSearch.bind(this)
+  }
+  
+  get search() {
+    return this.shadowRoot.querySelector('custom-search')
+  } 
+  
+  connectedCallback() {
+    this.search.addEventListener('search', this._onSearch)
+  }
+  
+  async _onSearch({detail}) {
+    try {
+      const result = await api.get(detail)
+      console.log(result);
+    } catch (e) {
+      console.error(e);
+    }
   }
 })
